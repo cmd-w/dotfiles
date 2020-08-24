@@ -18,7 +18,7 @@ bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple
 txtrst='\e[0m'    # Text Reset
 
-emojis=("🌊" "🔮" "⏳" "🌍"  "🐲" "🪐" )
+emojis=("🌊" "⏳" "🔮" "🌍" "🪐")
 
 EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
@@ -44,17 +44,23 @@ function mkcd()
 # Aliases
 # -------
 alias 🍺="git checkout -b drunk"
-alias a='code .'
 alias c='code .'
 alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
-alias ns='npm start'
-alias start='npm start'
-alias nr='npm run'
-alias run='npm run'
-alias nis='npm i -S'
 alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
+
+# ------------------
+# Personal Aliases
+# ------------------
+
+alias w0="networksetup -setairportpower en0 off"
+alias w1="networksetup -setairportpower en0 on"
+
+alias b0="blueutil -p 0" 
+alias b1="blueutil -p 1"
+
+alias home="cd ~"
 
 # ----------------------
 # Git Aliases
