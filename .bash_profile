@@ -17,7 +17,7 @@ txtgrn='\e[0;32m' # Green
 bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple txtrst='\e[0m'    # Text Reset
 
-emojis=("🌊" "⏳" "🔮" "🧠" "🪐" "🧬" "🃏")
+emojis=("🌊" "🔮" "🪐" "🧬")
 
 EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
