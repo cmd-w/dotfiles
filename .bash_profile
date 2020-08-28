@@ -48,7 +48,6 @@ alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
 alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
-alias eject="diskutil eject disk2s2"
 
 # ------------------
 # Personal Aliases
@@ -61,6 +60,7 @@ alias b0="blueutil -p 0"
 alias b1="blueutil -p 1"
 
 alias home="cd ~"
+alias eject="diskutil eject disk2s2"
 
 # ----------------------
 # Git Aliases
