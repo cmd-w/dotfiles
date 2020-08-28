@@ -62,6 +62,9 @@ alias b1="blueutil -p 1"
 alias home="cd ~"
 alias eject="diskutil eject disk2s2"
 
+alias movie="cd /Volumes/driver_a/mp4/movie/"
+alias serie="cd /Volumes/driver_a/mp4/serie/"
+
 # ----------------------
 # Git Aliases
 # ----------------------
