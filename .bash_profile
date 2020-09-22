@@ -65,6 +65,8 @@ alias eject="diskutil eject disk2s2"
 alias movie="cd /Volumes/driver_a/mp4/movie/"
 alias serie="cd /Volumes/driver_a/mp4/serie/"
 
+alias sleep="pmset sleepnow"
+
 # ----------------------
 # Git Aliases
 # ----------------------
