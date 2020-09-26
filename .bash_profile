@@ -66,7 +66,8 @@ alias movie="cd /Volumes/driver_a/mp4/movie/"
 alias serie="cd /Volumes/driver_a/mp4/serie/"
 
 alias sleep="pmset sleepnow"
-alias goodnight="w0;b0;killall -u artuurmaertens;sleep"
+alias goodnight="w0;b0;sleep"
+alias vacay="w0;b0;sleep;killall -u artuurmaertens"
 
 # ----------------------
 # Git Aliases
