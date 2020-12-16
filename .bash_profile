@@ -59,6 +59,8 @@ alias w1="networksetup -setairportpower en0 on"
 alias b0="blueutil -p 0" 
 alias b1="blueutil -p 1"
 
+alias chrome="open /Users/artuurmaertens/chrome"
+
 alias home="cd ~"
 alias eject="diskutil eject disk2s2"
 
