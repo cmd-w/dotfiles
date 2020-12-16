@@ -30,10 +30,13 @@ print_before_the_prompt () {
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI >"
 
-fortune | cowsay -f tux
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
+PS1="\[\e[36m\]\t\[\033[m\] > "
+
+neofetch
+ 
 function mkcd()
 {
 	mkdir $1 && cd $1
@@ -59,10 +62,11 @@ alias w1="networksetup -setairportpower en0 on"
 alias b0="blueutil -p 0" 
 alias b1="blueutil -p 1"
 
-alias chrome="open /Users/artuurmaertens/chrome"
-
 alias home="cd ~"
 alias eject="diskutil eject disk2s2"
+
+alias chrome="open /Users/artuurmaertens/chrome"
+
 
 alias movie="cd /Volumes/driver_a/mp4/movie/"
 alias serie="cd /Volumes/driver_a/mp4/serie/"
