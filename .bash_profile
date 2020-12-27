@@ -3,8 +3,8 @@ HOST_NAME=cmd_w
 
 export PATH=$PATH:$HOME/bin
 
-export HISTSIZE=5000
-export HISTFILESIZE=10000
+export HISTSIZE=50
+export HISTFILESIZE=200
 
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
@@ -45,9 +45,7 @@ function mkcd()
 # -------
 # Aliases
 # -------
-alias 🍺="git checkout -b drunk"
 alias c='code .'
-alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
 alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
@@ -64,6 +62,7 @@ alias b1="blueutil -p 1"
 
 alias home="cd ~"
 alias eject="diskutil eject disk2s2"
+alias cl="clear"
 
 alias chrome="open /Users/artuurmaertens/chrome"
 
@@ -74,6 +73,7 @@ alias serie="cd /Volumes/driver_a/mp4/serie/"
 alias sleep="pmset sleepnow"
 alias goodnight="w0;b0;sleep"
 alias vacay="w0;b0;sleep;killall -u artuurmaertens"
+alias kill="killall -u artuurmaertens"
 
 # ----------------------
 # Git Aliases
