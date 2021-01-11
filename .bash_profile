@@ -17,9 +17,9 @@ txtgrn='\e[0;32m' # Green
 bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple txtrst='\e[0m'    # Text Reset
 
-emojis=("🌊" "🔮" "🦋" "🧬")
+#emojis=("🌊" "🔮" "🦋" "🧬")
 
-EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
+#EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
 print_before_the_prompt () {
     dir=$PWD
@@ -33,7 +33,7 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-PS1="\[\e[36m\]\t\[\033[m\] > "
+PS1="\[\e[36m\]\t\[\033[m\] >"
 
 neofetch
  
@@ -63,6 +63,8 @@ alias b1="blueutil -p 1"
 alias home="cd ~"
 alias eject="diskutil eject disk2s2"
 alias cl="clear"
+alias cpu="ps aux"
+alias disk="df -h"
 
 alias chrome="open /Users/artuurmaertens/chrome"
 
