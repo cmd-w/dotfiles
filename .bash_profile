@@ -19,7 +19,7 @@ bldpur='\e[1;35m' # Bold Purple txtrst='\e[0m'    # Text Reset
 
 #emojis=("🌊" "🔮" "🦋" "🧬")
 
-EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
+#EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
 print_before_the_prompt () {
     dir=$PWD
@@ -33,11 +33,11 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-#PS1="\[\e[36m\]\t\[\033[m\] >"
-PS1="$EMOJI >"
+PS1="\[\e[36m\]\t\[\033[m\] >"
+#PS1="$EMOJI >"
 
-#neofetch
-fortune | cowsay -f tux
+neofetch
+#fortune | cowsay -f tux
  
 function mkcd()
 {
