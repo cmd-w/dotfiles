@@ -77,7 +77,7 @@ alias serie="cd /Volumes/driver_a/mp4/serie/"
 alias sleep="pmset sleepnow"
 alias goodnight="w0;b0;sleep"
 alias vacay="w0;b0;sleep;killall -u artuurmaertens"
-alias refresh="home;cl;neofetch"
+alias renew="home;cl;neofetch"
 
 # ----------------------
 # Git Aliases
