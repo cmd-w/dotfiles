@@ -12,32 +12,39 @@ bind '"\e[B": history-search-forward'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+export EDITOR='vim'
+
 txtred='\e[0;31m' # Red
 txtgrn='\e[0;32m' # Green
 bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple txtrst='\e[0m'    # Text Reset
 
-#emojis=("🌊" "🔮" "🦋" "🧬")
+emojis=("🌊" "🔮" "🦋" "🧬")
 
-#EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
+EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
 print_before_the_prompt () {
-    dir=$PWD
+   dir=$PWD
     home=$HOME
     dir=${dir/"$HOME"/"~"}
-    printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOST_NAME" "$dir" "$(vcprompt)"
+#    printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOST_NAME" "$dir" "$(vcprompt)"
 }
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-PS1="\[\e[36m\]\t\[\033[m\] >"
+export PS1="smoll\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
+
+export LSCOLORS=cxgxfxexbxegedabagacad
+
+export EDITOR='vim'
+
+#PS1="\[\e[36m\]\t\[\033[m\] >"
 #PS1="$EMOJI >"
 
-neofetch
-#fortune | cowsay -f tux
+#neofetch
+#fortune | cowsay -f tux 
  
 function mkcd()
 {
@@ -77,7 +84,7 @@ alias serie="cd /Volumes/driver_a/mp4/serie/"
 alias sleep="pmset sleepnow"
 alias goodnight="w0;b0;sleep"
 alias vacay="w0;b0;sleep;killall -u artuurmaertens"
-alias renew="home;cl;neofetch"
+alias renew="home;cl;fortune"
 
 # ----------------------
 # Git Aliases
@@ -94,3 +101,5 @@ alias gp='git pull'
 alias gpsh='git push'
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+
+
