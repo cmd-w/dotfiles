@@ -1,4 +1,4 @@
-HOST_NAME=cmd_w
+HOST_NAME=smoll 
 
 
 export PATH=$PATH:$HOME/bin
@@ -12,25 +12,27 @@ bind '"\e[B": history-search-forward'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export EDITOR='vim'
+export EDITOR='subl -w'
 
 txtred='\e[0;31m' # Red
 txtgrn='\e[0;32m' # Green
 bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple txtrst='\e[0m'    # Text Reset
 
-emojis=("🌊" "🔮" "🦋" "🧬")
+emojis=("🎱" "🔮" "🍄" "🍺" "🍁")
 
 EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
+: '
 print_before_the_prompt () {
    dir=$PWD
     home=$HOME
     dir=${dir/"$HOME"/"~"}
 #    printf "\n $txtred%s: $bldpur%s $txtgrn%s\n$txtrst" "$HOST_NAME" "$dir" "$(vcprompt)"
 }
+'
 
-PROMPT_COMMAND=print_before_the_prompt
+#PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -38,13 +40,12 @@ export PS1="smoll\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[
 
 export LSCOLORS=cxgxfxexbxegedabagacad
 
-export EDITOR='vim'
 
 #PS1="\[\e[36m\]\t\[\033[m\] >"
-#PS1="$EMOJI >"
+#PS1="$EMOJI\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
 
 #neofetch
-#fortune | cowsay -f tux 
+fortune workspace/quotes.txt | cowsay #-f tux
  
 function mkcd()
 {
@@ -54,8 +55,6 @@ function mkcd()
 # -------
 # Aliases
 # -------
-alias c='code .'
-alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
 alias o="open ." # Open the current directory in Finder
 
@@ -73,10 +72,10 @@ alias home="cd ~"
 alias eject="diskutil eject disk2s2"
 alias cl="clear"
 alias cpu="ps aux"
-alias disk="df -h"
+alias disk="df -lh" 
 
 alias chrome="open /Users/artuurmaertens/chrome"
-
+alias yt="~/yt.py"
 
 alias movie="cd /Volumes/driver_a/mp4/movie/"
 alias serie="cd /Volumes/driver_a/mp4/serie/"
@@ -84,7 +83,7 @@ alias serie="cd /Volumes/driver_a/mp4/serie/"
 alias sleep="pmset sleepnow"
 alias goodnight="w0;b0;sleep"
 alias vacay="w0;b0;sleep;killall -u artuurmaertens"
-alias renew="home;cl;fortune"
+alias new="home;cl;fortune workspace/quotes.txt | cowsay; " #-f tux"
 
 # ----------------------
 # Git Aliases
@@ -93,7 +92,7 @@ alias ga='git add'
 alias gaa='git add .'
 alias gaaa='git add -A'
 alias gc='git commit'
-alias gcm='git commit -m'
+alias gcm='git commit -a --allow-empty-message -m ""'
 alias gd='git diff'
 alias gi='git init'
 alias gl='git log'
