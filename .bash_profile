@@ -36,7 +36,9 @@ print_before_the_prompt () {
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export PS1="smoll\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
+export PS1="smoll\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\W\[\e[m\] \[\e[34m\]»\[\e[m\]" 
+
+#REMEMBER: lowercase w = show whole pwd, uppercase W = show only current folder in prompt
 
 export LSCOLORS=cxgxfxexbxegedabagacad
 
@@ -100,3 +102,5 @@ alias gp='git pull'
 alias gpsh='git push'
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+
+
