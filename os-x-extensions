@@ -20,6 +20,5 @@ brew cask install alfred
 brew cask install chrome
 
 mkdir ~/workspace
-npm install -g lite-server eslint
 brew cask install sublime text
 
