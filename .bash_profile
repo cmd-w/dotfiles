@@ -6,8 +6,9 @@ export PATH=$PATH:$HOME/bin
 export HISTSIZE=50
 export HISTFILESIZE=200
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+#bind '"\e[A": history-search-backward'
+#bind '"\e[B": history-search-forward'
+   # used in tmux, linux go crazy when not commented out. 
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -36,7 +37,7 @@ print_before_the_prompt () {
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export PS1="smoll\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\W\[\e[m\] \[\e[34m\]»\[\e[m\]" 
+export PS1="smoll\[\e[31m\] \[\e[32m\]\W\[\e[m\] \[\e[34m\]» \[\e[m\]" 
 
 #REMEMBER: lowercase w = show whole pwd, uppercase W = show only current folder in prompt
 
@@ -47,7 +48,7 @@ export LSCOLORS=cxgxfxexbxegedabagacad
 #PS1="$EMOJI\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\] "
 
 #neofetch
-fortune workspace/quotes.txt | cowsay #-f tux
+fortune /home/cmd-w/workspace/quotes.txt | cowsay #-f tux
  
 function mkcd()
 {
@@ -64,11 +65,11 @@ alias o="open ." # Open the current directory in Finder
 # Personal Aliases
 # ------------------
 
-alias w0="networksetup -setairportpower en0 off"
-alias w1="networksetup -setairportpower en0 on"
+alias w0="nmcli radio wifi off"
+alias w1="nmcli radio wifi on"
 
-alias b0="blueutil -p 0" 
-alias b1="blueutil -p 1"
+alias b0="sudo systemctl disable bluetooth.service" 
+alias b1="sudo systemctl enable bluetooth.service"
 
 alias home="cd ~"
 alias eject="diskutil eject disk2s2"
@@ -76,16 +77,12 @@ alias cl="clear"
 alias cpu="ps aux"
 alias disk="df -lh" 
 
-alias chrome="open /Users/artuurmaertens/chrome"
-alias yt="~/yt.py"
+alias chrome="open /usr/share/applications/google-chrome.desktop"
 
-alias movie="cd /Volumes/driver_a/mp4/movie/"
-alias serie="cd /Volumes/driver_a/mp4/serie/"
+# alias movie="cd /Volumes/driver_a/mp4/movie/"
+# alias serie="cd /Volumes/driver_a/mp4/serie/"
 
-alias sleep="pmset sleepnow"
-alias goodnight="w0;b0;sleep"
-alias vacay="w0;b0;sleep;killall -u artuurmaertens"
-alias new="home;cl;fortune workspace/quotes.txt | cowsay; " #-f tux"
+alias new="home;cl;fortune /home/cmd-w/workspace/quotes.txt | cowsay; " #-f tux"
 
 # ----------------------
 # Git Aliases
@@ -102,5 +99,4 @@ alias gp='git pull'
 alias gpsh='git push'
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
-
 
